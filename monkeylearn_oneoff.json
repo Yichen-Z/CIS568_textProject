@@ -1,0 +1,842 @@
+
+HTTP/1.1 200 OK
+content-length: 2972
+content-type: application/json
+x-query-limit-limit: 1000
+x-query-limit-remaining: 999
+x-query-limit-request-queries: 1
+
+// Review from line 6900
+
+// 1. Keyword extraction
+[
+  {
+    "text": "The Ultimate in Employee & Customer Engagement. Ease, Confidence, and Achievement!!! this bank focuses on keeping it's employees engaged and happy, with the understanding that we carry this with us as we interact with customers and act as brand ambassadors. The value I brought to my clients in the Business Bank, $1MM to $10MM was centered around my ability to quickly and efficiently analyze a businesses operational model, cash flow, and understand where those things intersected with banking. A checking account is a checking account, however the ability to offer sound advice and build relationships with my clients that demonstrated a genuine commitment to helping them grow and prosper...this is what  this bank business banking was about form my perspective. My manager worked diligently to give me the tools to be successful, particularly around credit analysis. HE also was very cognizant of work/life balance and maintaining our engagement around the teams strengths. The most rewarding part of my job was the the relationships I cultivated with clients and teammates and being able to be counted on as a valuable resource for the solutions to problems I provided.",
+    "external_id": null,
+    "error": false,
+    "extractions": [
+      {
+        "tag_name": "OPINION",
+        "parsed_value": "genuine commitment",
+        "count": 1,
+        "forms": [
+          {
+            "start_char": 641,
+            "form": "genuine commitment",
+            "end_char": 659
+          }
+        ],
+        "relevance": 1
+      },
+      {
+        "tag_name": "OPINION",
+        "parsed_value": "valuable resource",
+        "count": 1,
+        "forms": [
+          {
+            "start_char": 1116,
+            "form": "valuable resource",
+            "end_char": 1133
+          }
+        ],
+        "relevance": 1
+      },
+      {
+        "tag_name": "ASPECT",
+        "parsed_value": "bank business banking",
+        "count": 1,
+        "forms": [
+          {
+            "start_char": 714,
+            "form": "bank business banking",
+            "end_char": 735
+          }
+        ],
+        "relevance": 0.39267540385210403
+      },
+      {
+        "tag_name": "ASPECT",
+        "parsed_value": "client",
+        "count": 3,
+        "forms": [
+          {
+            "start_char": 284,
+            "form": "clients",
+            "end_char": 291
+          },
+          {
+            "start_char": 613,
+            "form": "clients",
+            "end_char": 620
+          },
+          {
+            "start_char": 1057,
+            "form": "clients",
+            "end_char": 1064
+          }
+        ],
+        "relevance": 0.3616590117103423
+      },
+      {
+        "tag_name": "ASPECT",
+        "parsed_value": "operational model",
+        "count": 1,
+        "forms": [
+          {
+            "start_char": 407,
+            "form": "operational model",
+            "end_char": 424
+          }
+        ],
+        "relevance": 0.3492524548536376
+      },
+      {
+        "tag_name": "ASPECT",
+        "parsed_value": "customer engagement",
+        "count": 1,
+        "forms": [
+          {
+            "start_char": 27,
+            "form": "Customer Engagement",
+            "end_char": 46
+          }
+        ],
+        "relevance": 0.3492524548536376
+      },
+      {
+        "tag_name": "ASPECT",
+        "parsed_value": "brand ambassador",
+        "count": 1,
+        "forms": [
+          {
+            "start_char": 239,
+            "form": "brand ambassadors",
+            "end_char": 256
+          }
+        ],
+        "relevance": 0.3492524548536376
+      },
+      {
+        "tag_name": "ASPECT",
+        "parsed_value": "business bank",
+        "count": 1,
+        "forms": [
+          {
+            "start_char": 299,
+            "form": "Business Bank",
+            "end_char": 312
+          }
+        ],
+        "relevance": 0.3492524548536376
+      },
+      {
+        "tag_name": "ASPECT",
+        "parsed_value": "team strength",
+        "count": 1,
+        "forms": [
+          {
+            "start_char": 962,
+            "form": "teams strengths",
+            "end_char": 977
+          }
+        ],
+        "relevance": 0.3492524548536376
+      },
+      {
+        "tag_name": "ASPECT",
+        "parsed_value": "life balance",
+        "count": 1,
+        "forms": [
+          {
+            "start_char": 907,
+            "form": "life balance",
+            "end_char": 919
+          }
+        ],
+        "relevance": 0.3492524548536376
+      }
+    ]
+  }
+]
+
+// 2. Simple sentiment - over entire review
+
+HTTP/1.1 200 OK
+content-length: 1303
+content-type: application/json
+x-query-limit-limit: 1000
+x-query-limit-remaining: 998
+x-query-limit-request-queries: 1
+
+[
+  {
+    "text": "The Ultimate in Employee & Customer Engagement. Ease, Confidence, and Achievement!!! this bank focuses on keeping it's employees engaged and happy, with the understanding that we carry this with us as we interact with customers and act as brand ambassadors. The value I brought to my clients in the Business Bank, $1MM to $10MM was centered around my ability to quickly and efficiently analyze a businesses operational model, cash flow, and understand where those things intersected with banking. A checking account is a checking account, however the ability to offer sound advice and build relationships with my clients that demonstrated a genuine commitment to helping them grow and prosper...this is what  this bank business banking was about form my perspective. My manager worked diligently to give me the tools to be successful, particularly around credit analysis. HE also was very cognizant of work/life balance and maintaining our engagement around the teams strengths. The most rewarding part of my job was the the relationships I cultivated with clients and teammates and being able to be counted on as a valuable resource for the solutions to problems I provided.",
+    "external_id": null,
+    "error": false,
+    "classifications": [
+      {
+        "tag_name": "Positive",
+        "tag_id": 122921383,
+        "confidence": 0.996
+      }
+    ]
+  }
+]
+
+// 3. Aspect, Qualifier, Action - seems more useful
+HTTP/1.1 200 OK
+content-length: 8417
+content-type: application/json
+x-query-limit-limit: 1000
+x-query-limit-remaining: 997
+x-query-limit-request-queries: 1
+
+[
+  {
+    "text": "The Ultimate in Employee & Customer Engagement. Ease, Confidence, and Achievement!!! this bank focuses on keeping it's employees engaged and happy, with the understanding that we carry this with us as we interact with customers and act as brand ambassadors. The value I brought to my clients in the Business Bank, $1MM to $10MM was centered around my ability to quickly and efficiently analyze a businesses operational model, cash flow, and understand where those things intersected with banking. A checking account is a checking account, however the ability to offer sound advice and build relationships with my clients that demonstrated a genuine commitment to helping them grow and prosper...this is what  this bank business banking was about form my perspective. My manager worked diligently to give me the tools to be successful, particularly around credit analysis. HE also was very cognizant of work/life balance and maintaining our engagement around the teams strengths. The most rewarding part of my job was the the relationships I cultivated with clients and teammates and being able to be counted on as a valuable resource for the solutions to problems I provided.",
+    "external_id": null,
+    "error": false,
+    "extractions": [
+      {
+        "tag_name": "qualifier",
+        "extracted_text": "Ultimate",
+        "parsed_value": "ultimate",
+        "offset_span": [
+          4,
+          11
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "Customer Engagement",
+        "parsed_value": "customer engagement",
+        "offset_span": [
+          27,
+          45
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "Ease",
+        "parsed_value": "ease",
+        "offset_span": [
+          48,
+          51
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "Confidence",
+        "parsed_value": "confidence",
+        "offset_span": [
+          54,
+          63
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "Achievement",
+        "parsed_value": "achievement",
+        "offset_span": [
+          70,
+          80
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "bank",
+        "parsed_value": "bank",
+        "offset_span": [
+          90,
+          93
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "employees",
+        "parsed_value": "employee",
+        "offset_span": [
+          119,
+          127
+        ]
+      },
+      {
+        "tag_name": "qualifier",
+        "extracted_text": "happy",
+        "parsed_value": "happy",
+        "offset_span": [
+          141,
+          145
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "understanding",
+        "parsed_value": "understanding",
+        "offset_span": [
+          157,
+          169
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "carry",
+        "parsed_value": "carry",
+        "offset_span": [
+          179,
+          183
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "interact",
+        "parsed_value": "interact",
+        "offset_span": [
+          204,
+          211
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "customers",
+        "parsed_value": "customer",
+        "offset_span": [
+          218,
+          226
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "act",
+        "parsed_value": "act",
+        "offset_span": [
+          232,
+          234
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "brand ambassadors",
+        "parsed_value": "brand ambassador",
+        "offset_span": [
+          239,
+          255
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "value",
+        "parsed_value": "value",
+        "offset_span": [
+          262,
+          266
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "brought",
+        "parsed_value": "bring",
+        "offset_span": [
+          270,
+          276
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "clients",
+        "parsed_value": "client",
+        "offset_span": [
+          284,
+          290
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "Business Bank",
+        "parsed_value": "business bank",
+        "offset_span": [
+          299,
+          311
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "$10MM",
+        "parsed_value": "$10mm",
+        "offset_span": [
+          322,
+          326
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "centered",
+        "parsed_value": "center",
+        "offset_span": [
+          332,
+          339
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "ability",
+        "parsed_value": "ability",
+        "offset_span": [
+          351,
+          357
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "efficiently",
+        "parsed_value": "efficiently",
+        "offset_span": [
+          374,
+          384
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "analyze",
+        "parsed_value": "analyze",
+        "offset_span": [
+          386,
+          392
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "businesses",
+        "parsed_value": "business",
+        "offset_span": [
+          396,
+          405
+        ]
+      },
+      {
+        "tag_name": "qualifier",
+        "extracted_text": "operational",
+        "parsed_value": "operational",
+        "offset_span": [
+          407,
+          417
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "model",
+        "parsed_value": "model",
+        "offset_span": [
+          419,
+          423
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "cash flow",
+        "parsed_value": "cash flow",
+        "offset_span": [
+          426,
+          434
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "understand",
+        "parsed_value": "understand",
+        "offset_span": [
+          441,
+          450
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "intersected",
+        "parsed_value": "intersect",
+        "offset_span": [
+          471,
+          481
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "banking",
+        "parsed_value": "banking",
+        "offset_span": [
+          488,
+          494
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "checking",
+        "parsed_value": "checking",
+        "offset_span": [
+          499,
+          506
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "account",
+        "parsed_value": "account",
+        "offset_span": [
+          508,
+          514
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "checking account",
+        "parsed_value": "checking account",
+        "offset_span": [
+          521,
+          536
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "ability",
+        "parsed_value": "ability",
+        "offset_span": [
+          551,
+          557
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "offer",
+        "parsed_value": "offer",
+        "offset_span": [
+          562,
+          566
+        ]
+      },
+      {
+        "tag_name": "qualifier",
+        "extracted_text": "sound",
+        "parsed_value": "sound",
+        "offset_span": [
+          568,
+          572
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "advice",
+        "parsed_value": "advice",
+        "offset_span": [
+          574,
+          579
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "build",
+        "parsed_value": "build",
+        "offset_span": [
+          585,
+          589
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "relationships",
+        "parsed_value": "relationship",
+        "offset_span": [
+          591,
+          603
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "clients",
+        "parsed_value": "client",
+        "offset_span": [
+          613,
+          619
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "demonstrated",
+        "parsed_value": "demonstrate",
+        "offset_span": [
+          626,
+          637
+        ]
+      },
+      {
+        "tag_name": "qualifier",
+        "extracted_text": "genuine",
+        "parsed_value": "genuine",
+        "offset_span": [
+          641,
+          647
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "commitment",
+        "parsed_value": "commitment",
+        "offset_span": [
+          649,
+          658
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "grow",
+        "parsed_value": "grow",
+        "offset_span": [
+          676,
+          679
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "prosper",
+        "parsed_value": "prosper",
+        "offset_span": [
+          685,
+          691
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "bank business",
+        "parsed_value": "bank business",
+        "offset_span": [
+          714,
+          726
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "banking",
+        "parsed_value": "banking",
+        "offset_span": [
+          728,
+          734
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "form",
+        "parsed_value": "form",
+        "offset_span": [
+          746,
+          749
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "perspective",
+        "parsed_value": "perspective",
+        "offset_span": [
+          754,
+          764
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "manager",
+        "parsed_value": "manager",
+        "offset_span": [
+          770,
+          776
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "worked",
+        "parsed_value": "work",
+        "offset_span": [
+          778,
+          783
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "tools",
+        "parsed_value": "tool",
+        "offset_span": [
+          811,
+          815
+        ]
+      },
+      {
+        "tag_name": "qualifier",
+        "extracted_text": "successful",
+        "parsed_value": "successful",
+        "offset_span": [
+          823,
+          832
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "credit analysis",
+        "parsed_value": "credit analysis",
+        "offset_span": [
+          855,
+          869
+        ]
+      },
+      {
+        "tag_name": "qualifier",
+        "extracted_text": "cognizant",
+        "parsed_value": "cognizant",
+        "offset_span": [
+          889,
+          897
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "work",
+        "parsed_value": "work",
+        "offset_span": [
+          902,
+          905
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "life balance",
+        "parsed_value": "life balance",
+        "offset_span": [
+          907,
+          918
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "maintaining",
+        "parsed_value": "maintain",
+        "offset_span": [
+          924,
+          934
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "engagement",
+        "parsed_value": "engagement",
+        "offset_span": [
+          940,
+          949
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "teams strengths",
+        "parsed_value": "team strength",
+        "offset_span": [
+          962,
+          976
+        ]
+      },
+      {
+        "tag_name": "qualifier",
+        "extracted_text": "rewarding",
+        "parsed_value": "rewarding",
+        "offset_span": [
+          988,
+          996
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "job",
+        "parsed_value": "job",
+        "offset_span": [
+          1009,
+          1011
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "relationships",
+        "parsed_value": "relationship",
+        "offset_span": [
+          1025,
+          1037
+        ]
+      },
+      {
+        "tag_name": "action",
+        "extracted_text": "cultivated",
+        "parsed_value": "cultivate",
+        "offset_span": [
+          1041,
+          1050
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "clients",
+        "parsed_value": "client",
+        "offset_span": [
+          1057,
+          1063
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "teammates",
+        "parsed_value": "teammate",
+        "offset_span": [
+          1069,
+          1077
+        ]
+      },
+      {
+        "tag_name": "qualifier",
+        "extracted_text": "able",
+        "parsed_value": "able",
+        "offset_span": [
+          1089,
+          1092
+        ]
+      },
+      {
+        "tag_name": "qualifier",
+        "extracted_text": "valuable",
+        "parsed_value": "valuable",
+        "offset_span": [
+          1116,
+          1123
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "resource",
+        "parsed_value": "resource",
+        "offset_span": [
+          1125,
+          1132
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "solutions",
+        "parsed_value": "solution",
+        "offset_span": [
+          1142,
+          1150
+        ]
+      },
+      {
+        "tag_name": "aspect",
+        "extracted_text": "problems",
+        "parsed_value": "problem",
+        "offset_span": [
+          1155,
+          1162
+        ]
+      }
+    ]
+  }
+]
+
