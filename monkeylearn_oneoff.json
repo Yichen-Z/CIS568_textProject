@@ -840,3 +840,53 @@ x-query-limit-request-queries: 1
   }
 ]
 
+
+Explore > Opinion Unit Extractor
+
+    YZ
+
+    Demo
+    Batch
+    API
+    Integrate
+
+Opinion Unit Extractor
+Extracts opinion units from a given text in English. Useful to separate paragraphs or sentences into smaller pieces of data.
+OPINION_UNIT
+Test with your own text: I enjoy the people at this bank, made some lifelong relationships, but the environment is stressful a lot of the time and you often have to follow strict work schedules due to schedule adherence rules
+Inline List JSON
+HTTP/1.1 200 OK
+content-length: 838
+content-type: application/json
+x-query-limit-limit: 1000
+x-query-limit-remaining: 570
+x-query-limit-request-queries: 1
+
+[
+  {
+    "text": "I enjoy the people at this bank, made some lifelong relationships, but the environment is stressful a lot of the time and you often have to follow strict work schedules due to schedule adherence rules",
+    "external_id": null,
+    "error": false,
+    "extractions": [
+      {
+        "tag_name": "OPINION_UNIT",
+        "extracted_text": "I enjoy the people at this bank, made some lifelong relationships, ",
+        "parsed_value": "I enjoy the people at this bank, made some lifelong relationships, ",
+        "offset_span": [
+          0,
+          66
+        ]
+      },
+      {
+        "tag_name": "OPINION_UNIT",
+        "extracted_text": "but the environment is stressful a lot of the time and you often have to follow strict work schedules due to schedule adherence rules",
+        "parsed_value": "but the environment is stressful a lot of the time and you often have to follow strict work schedules due to schedule adherence rules",
+        "offset_span": [
+          67,
+          199
+        ]
+      }
+    ]
+  }
+]
+
