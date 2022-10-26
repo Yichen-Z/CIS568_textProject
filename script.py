@@ -9,7 +9,12 @@ from fastcoref import spacy_component
 INPUT_DIR = 'review_chunks'
 OUTPUT_FILE = 'review_post.csv'
 
-logging.basicConfig(filename=r'C:/Users/house/workspace/CIS_568_DataMining/CIS568_textProject/review_processor.log',encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+# Do just once - does this save time?
+logging.basicConfig(filename=r'review_processor.log',encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+nlp = spacy.load("en_core_web_sm", exclude=["parser", "lemmatizer", "ner", "textcat"])
+nlp.add_pipe("fastcoref")
+simple_nlp = spacy.load("en_core_web_sm", exclude=["lemmatizer", "ner", "textcat"])
+sentiment_model = pipeline("sentiment-analysis")
 
 def preprocess(in_file, out_file):
     """
@@ -28,8 +33,6 @@ def preprocess(in_file, out_file):
 
     # Replace pronouns
     review = df['combined_text']
-    nlp = spacy.load("en_core_web_sm", exclude=["parser", "lemmatizer", "ner", "textcat"])
-    nlp.add_pipe("fastcoref")
     docs = nlp.pipe(
         review, 
         component_cfg={"fastcoref": {'resolve_text': True}}
@@ -41,12 +44,10 @@ def preprocess(in_file, out_file):
     logging.info(f'Replaced pronouns')
 
     # Split each review into individual sentences
-    simple_nlp = spacy.load("en_core_web_sm", exclude=["lemmatizer", "ner", "textcat"])
     df["sentences"] = df["antecedents_replaced"].apply(lambda x: [sent.text for sent in simple_nlp(x).sents])
     logging.info(f'Split sentences')
 
     # Sentiment
-    sentiment_model = pipeline("sentiment-analysis")
     df["sentiment"] = df["sentences"].apply(lambda x: sentiment_model(x))
     logging.info(f'Sentiment predicted')
 
