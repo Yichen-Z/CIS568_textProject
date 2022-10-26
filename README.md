@@ -46,6 +46,9 @@ Indeed company reviews
             Sample: I enjoy the people at this bank, made some lifelong relationships, but the environment is stressful a lot of the time and you often have to follow strict work schedules due to schedule adherence rules
                 Topic Classifier: Society, 47% confidence
                 Opinion Unit Extractor: See monkeylearn_oneoff.json -> has promise
+    
+    Issues
+        Skipped ab -> split further?
 
 ### Post-processing Issues
     Non-ASCII characters that can get garbled:
