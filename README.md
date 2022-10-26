@@ -1,6 +1,30 @@
 # CIS568_textProject
 Team repo for CIS 568/ECE 537 Data Mining course project Fall 2022
 
+## Virtual Environment Setup
+In Visual Studio Code
+    Powershell terminal
+        ```
+        python -m venv review_venv
+        ```
+    Pop-up at right bottom corner: select new interpreter/virtual environment for current workspace
+    Close current Powershell terminal and reopen
+        (review_venv) should now head the command line
+    
+## Packages
+    First update pip
+        ```
+        python -m pip install --upgrade pip
+        ```
+    FastCoref: antecedent resolution
+        ```
+        python -m pip install fastcoref
+        ```
+    spaCy language model
+        ```
+        python -m spacy download en_core_web_sm
+        ```
+
 ## Data 
 Indeed company reviews
 
@@ -10,6 +34,8 @@ Indeed company reviews
         ✔ Some reviews have no role/geographic location/valid review - slate for removal
         ✔ Remove 2+ blank spaces
     
+    LDA to see if there are groupings
+    Use Fast-Coref's spaCy component to replace pronouns with their antecedents
     Break review body into its component sentences
     Classify each sentence by its topic(s)
         Manual labeling
