@@ -46,3 +46,21 @@ Indeed company reviews
             Sample: I enjoy the people at this bank, made some lifelong relationships, but the environment is stressful a lot of the time and you often have to follow strict work schedules due to schedule adherence rules
                 Topic Classifier: Society, 47% confidence
                 Opinion Unit Extractor: See monkeylearn_oneoff.json -> has promise
+
+### Post-processing Issues
+    Non-ASCII characters that can get garbled:
+        …
+
+## Resources
+    Pandas
+        [Append dataframe to existing file](https://www.geeksforgeeks.org/how-to-append-pandas-dataframe-to-existing-csv-file/)
+
+    Python 
+        [logging](https://docs.python.org/3/howto/logging.html)
+        os module
+            [Iterating through files](https://www.geeksforgeeks.org/python-loop-through-files-of-certain-extensions/)
+            [Joining paths](https://www.geeksforgeeks.org/python-os-path-join-method/)
+
+    [Sentence Separation with spaCy](https://spacy.io/api/sentencizer)
+
+    [Sentiment Models](https://huggingface.co/blog/sentiment-analysis-python#2-how-to-use-pre-trained-sentiment-analysis-models-with-python)

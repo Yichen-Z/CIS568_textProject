@@ -1,1 +1,1 @@
-split indeed_reviews_processed.csv reviews_part_
+split indeed_reviews_processed.csv reviews_part_ -l200
