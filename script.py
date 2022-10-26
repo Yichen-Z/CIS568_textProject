@@ -9,7 +9,7 @@ from fastcoref import spacy_component
 INPUT_DIR = 'review_chunks'
 OUTPUT_FILE = 'review_post.csv'
 
-logging.basicConfig(filename=r'C:\Users\house\workspace\CIS_568_DataMining\CIS568_textProject\review_processor.log',encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+logging.basicConfig(filename=r'C:/Users/house/workspace/CIS_568_DataMining/CIS568_textProject/review_processor.log',encoding='utf-8', level=logging.DEBUG, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
 def preprocess(in_file, out_file):
     """
