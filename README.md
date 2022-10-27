@@ -29,14 +29,23 @@ In Visual Studio Code
 Indeed company reviews
 
 ### Data Pre-processing
-    Data cleaning 
+    Data cleaning -> indeed_reviews_processed.csv
         ❌ 48 reviews end with "more..." - most are probably irretrievable 
-        ✔ Some reviews have no role/geographic location/valid review - slate for removal
+        ✔ Some reviews have no role/geographic location/valid review - removed
+        ✔ Some reviews had formatting errors on employee status - fixed
         ✔ Remove 2+ blank spaces
     
+    Git Bash 
+        sh add_index.sh
+        (this adds in review_id)
+        sh split_csv.sh 
+        (this splits into small enough chunks for local machine memory)
+    
     LDA to see if there are groupings
-    Use Fast-Coref's spaCy component to replace pronouns with their antecedents
-    Break review body into its component sentences
+    ✔ Use Fast-Coref's spaCy component to replace pronouns with their antecedents
+        Issue: need to break data into smaller batches - try 50 lines
+    ✔ Break review body into its component sentences
+    ✔ Use Kaggle's basic Sentiment prediction (positive, negative)
     Classify each sentence by its topic(s)
         Manual labeling
     MonkeyLearn
@@ -57,6 +66,7 @@ Indeed company reviews
 ## Resources
     Pandas
         [Append dataframe to existing file](https://www.geeksforgeeks.org/how-to-append-pandas-dataframe-to-existing-csv-file/)
+        [Reset index](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.reset_index.html)
 
     Python 
         [logging](https://docs.python.org/3/howto/logging.html)
